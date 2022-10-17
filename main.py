@@ -23,19 +23,20 @@ while running:
     randInt = np.random.randint(low=1, high=10, size=(1))
     sourceList = ['A', 'B', 'C']
     source = random.randint(0, 2)
-    print(sourceList[source], randInt)
+    intrandint = int(randInt)
+    mainsource = (sourceList[source], intrandint)
 
+    print(mainsource)
 
     if sourceList[source] == 'A':
-         print('A was received')
-
-    intrandint = int(randInt)
+         global memA
+         memA = intrandint
 
     if sourceList[source] == 'A':
         yA = ((y - 40) - (intrandint * ((y - 40) / 10)))
         pygame.draw.line(screen, (0, 0, 0), (40, y - 40), (40, yA), width=8)
-
     else:
+        yA = ((y - 40) - (memA * ((y - 40) / 10)))
         pygame.draw.line(screen, (0, 0, 0), (40, y - 40), (40, yA), width=8)
 
     pygame.display.flip()
