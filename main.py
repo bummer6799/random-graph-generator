@@ -25,13 +25,23 @@ while running:
     source = random.randint(0, 2)
     print(sourceList[source], randInt)
 
+
+    if sourceList[source] == 'A':
+         print('A was received')
+
     intrandint = int(randInt)
 
-    y1 = ((y-40)-(intrandint*((y-40)/10)))
+    if sourceList[source] == 'A':
+        yA = ((y - 40) - (intrandint * ((y - 40) / 10)))
+        pygame.draw.line(screen, (0, 0, 0), (40, y - 40), (40, yA), width=8)
 
-    pygame.draw.line(screen, (0,0,0), (40, y-40), (40, y1), width=8)
+    else:
+        pygame.draw.line(screen, (0, 0, 0), (40, y - 40), (40, yA), width=8)
 
     pygame.display.flip()
+
+
+
 
 pygame.quit()
 
